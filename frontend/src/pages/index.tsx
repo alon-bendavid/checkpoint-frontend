@@ -1,5 +1,6 @@
-import CountiresCard from "@/components/countries";
-import Countries from "@/components/countries";
+// import CountiresCard from "@/components/countries";
+// import Countries from "@/components/countries";
+import CountiresCard from "@/components/Countries";
 import Header from "@/components/Header";
 import { useAddCountryMutation, useContinentsQuery, useCountriesQuery } from "@/graphql/generated/schema";
 import { graphQLResultHasError } from "@apollo/client/utilities";

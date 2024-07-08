@@ -1,4 +1,4 @@
-query country($code: String!) {
+query GetCountryByCode($code: String!) {
   country(code: $code) {
     id
     code
