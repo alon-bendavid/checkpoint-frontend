@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import { useAddCountryMutation, useContinentsQuery, useCountriesQuery } from "@/graphql/generated/schema";
 import { graphQLResultHasError } from "@apollo/client/utilities";
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 
 export default function Countires() {
@@ -19,31 +20,30 @@ export default function Countires() {
 
   return( 
     <>
-    <Header>
-    </Header>
-<div className=" py-24 sm:py-32 flex justify-center gap-6">
+
+<div className=" flex flex-col  gap-6 m-6 md:flex-row justify-between">
             {countries?.map((country) => (
-<div  className="bg-slate-300 min-w-20 p-2 " >
+                  <Link key={country.id} href={`/${country.id}`}>
+
+<div   className="bg-slate-300  p-4" >
 <div>
     {
         country.name
-
     } 
     </div>
     <div>
 
     {
         country.code
-
     }
     </div>
     <div>
     {
         country.emoji
-
     } 
     </div>
 </div>
+                </Link>
             ))}
             </div>
     </>

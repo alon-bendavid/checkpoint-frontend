@@ -1,3 +1,5 @@
+import CountiresCard from "@/components/countries";
+import Countries from "@/components/countries";
 import Header from "@/components/Header";
 import { useAddCountryMutation, useContinentsQuery, useCountriesQuery } from "@/graphql/generated/schema";
 import { graphQLResultHasError } from "@apollo/client/utilities";
@@ -33,11 +35,13 @@ export default function Home() {
     }
   };
   return( 
-    <>
+    < >
     <Header>
     </Header>
+<div className="flex justify-center"> 
 
-      <form onSubmit={handleSubmit} className="pb-12 mx-10 bg-slate-200 p-3 mt-2 rounded-lg justify-center">
+
+      <form onSubmit={handleSubmit} className="flex flex-col pb-12 w-60 md:w-80 bg-slate-200 p-3 mt-5 rounded-lg justify-center">
         <div className="flex flex-wrap gap-6 mb-3">
           <div className="form-control w-full max-w-xs">
             <label className="label" htmlFor="name">
@@ -100,6 +104,9 @@ export default function Home() {
           Add!
         </button>
       </form>
+</div>
+      <CountiresCard>
+      </CountiresCard>
     </>
 
   );
