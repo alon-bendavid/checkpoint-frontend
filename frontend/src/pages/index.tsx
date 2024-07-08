@@ -2,7 +2,7 @@
 // import Countries from "@/components/countries";
 import CountiresCard from "@/components/Countries";
 import Header from "@/components/Header";
-import { useAddCountryMutation, useContinentsQuery, useCountriesQuery } from "@/graphql/generated/schema";
+import { ObjectId, useAddCountryMutation, useContinentsQuery, useCountriesQuery } from "@/graphql/generated/schema";
 import { graphQLResultHasError } from "@apollo/client/utilities";
 import { FormEvent, useState } from "react";
 
@@ -27,7 +27,7 @@ export default function Home() {
 
 
     try {
-      const res = await addCountry({ variables: { data: formJSON } });
+      const res = await addCountry({ variables: { data: formJSON  } });
       console.log({ res });
       alert("country added!");
     } catch (e: any) {
@@ -90,13 +90,13 @@ export default function Home() {
             <label className="label" htmlFor="continenet">
               <span className="label-text">Continents</span>
             </label>
-            <select id="continent-select" name="continent">
-            {/* {dataContinents?.continents.map((continent) => (
+            {/* <select id="continent" name="continent">
+            {dataContinents?.continents.map((continent) => (
   <option key={continent.id} value={continent.id}>
     {continent.name}
   </option>
-        ))} */}
-      </select>
+        ))}
+      </select> */}
           </div>
         </div>
 

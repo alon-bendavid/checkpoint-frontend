@@ -5,7 +5,10 @@ import Link from "next/link";
 import router, { useRouter } from "next/router";
 import { FormEvent, useState } from "react";
 
+
+
 export default function CountiresCard() {
+    
     const router = useRouter();
     // const { code } = router.query;
     const { code }:any = router.query;
@@ -17,15 +20,16 @@ export default function CountiresCard() {
     
   });
 console.log(data);
-
-
   return( 
     <>
     <Header></Header>
-<div>
+    <div className="flex justify-center mt-9">
+
+<div className="bg-slate-300  p-8 rounded-lg">
 <h1>{data?.country.name}</h1>
 <p>{data?.country.code}</p>
 </div>
+    </div>
     </>
 
   );
