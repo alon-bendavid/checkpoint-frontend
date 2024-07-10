@@ -23,6 +23,7 @@ export default function Home() {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const formJSON: any = Object.fromEntries(formData.entries());
+    formJSON.continent = {id: parseInt(formJSON.continent, 10) };
 
 
 
@@ -90,13 +91,13 @@ export default function Home() {
             <label className="label" htmlFor="continenet">
               <span className="label-text">Continents</span>
             </label>
-            {/* <select id="continent" name="continent">
+            <select id="continent" name="continent">
             {dataContinents?.continents.map((continent) => (
   <option key={continent.id} value={continent.id}>
     {continent.name}
   </option>
         ))}
-      </select> */}
+      </select>
           </div>
         </div>
 
